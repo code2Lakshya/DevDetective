@@ -1,0 +1,322 @@
+:root {
+    --lm-bg: #f6f8ff;
+    --lm-bg-content: #fefefe;
+    --lm-text: #4b6a9b;
+    --lm-text-alt: #2b3442;
+    --lm-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
+    --lm-shadow-inactive: 0px 16px 30px -10px rgba(0, 0, 0, 0.2);
+    --lm-icon-bg: brightness(100%);
+    /* Btn */
+    --btn: #0079ff;
+    --btn-hover: #60abff;
+    --btn-color: #f6f8ff;
+    --placeholder-bg: #4b6a9b;
+    --lm-search-bg: #fefefe;
+}
+
+*,
+*::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Space Mono", monospace;
+}
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--lm-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.head-container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 45rem;
+    color: var(--lm-text);
+}
+#moon,#sun{
+  display:none;
+  margin-left: 10px;
+}
+#moon.active,#sun.active{
+    display: flex;
+}
+.changeColor-container{
+    display: flex;
+    align-items: center;
+    width: 20%;
+    justify-content: flex-end;
+}
+.search-container {
+    background-color: var(--lm-search-bg);
+    width: 90%;
+    padding: 0.4rem 1rem;
+    max-width: 45rem;
+    display: flex;
+    border-radius: 0.9rem;
+    justify-content: space-between;
+    align-items: center;
+    margin-block: 2rem;
+}
+
+.search-container img {
+    padding-right: 1rem;
+}
+
+[data-input] {
+    width: 60%;
+    height: 100%;
+    position: relative;
+    border: none;
+    font-size: 1.2rem;
+    background-color: var(--lm-search-bg);
+    color: var(--lm-text);
+}
+input::placeholder{
+    color: var(--placeholder-bg);
+}
+
+[data-input]:focus {
+    border: none;
+    outline: none;
+}
+
+.search-container [data-error] {
+    width: 30%;
+    color: red;
+    visibility: hidden;
+}
+
+.search-container [data-error].active {
+    visibility: visible;
+}
+
+.search-container .btn {
+    background-color: var(--btn);
+    color: var(--btn-color);
+    padding: 0.9rem;
+    border-radius: 0.9rem;
+    font-size: 1rem;
+    width: 20%;
+    border: none;
+    transition: all 0.1s ease-in;
+}
+
+.search-container .btn:active {
+    transform: scale(0.9);
+}
+
+.search-container .btn:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.userInfo-container {
+    background-color: var(--lm-search-bg);
+    width: 90%;
+    padding-right: 2rem;
+    max-width: 45rem;
+    border-radius: 0.9rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+}
+
+.userInfo-container [data-userimage] {
+    border-radius: 50%;
+    height: 8rem;
+    width: 8rem;
+    margin-bottom: 17rem;
+}
+
+.userInfo-container .details-container {
+    width: 70%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.details-container .user-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.details-container .user-container p {
+    padding-top: 7px;
+    word-wrap: break-word;
+}
+
+.details-container .user-container a {
+    display: inline-block;
+    margin-top: 9px;
+    color: var(--btn)
+}
+
+[data-bio] {
+    margin-block: 1.54rem;
+    color: var(--lm-text);
+    line-height: 1.5rem;
+    font-weight: lighter;
+}
+
+.followDetails-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: var(--lm-bg);
+    width: 100%;
+    padding: 1.2rem;
+    place-items: center;
+    border-radius: 10px;
+    gap:0.2rem;
+}
+
+.card p {
+    color: var(--lm-text);
+    font-size: 1rem;
+}
+
+.card h1 {
+    font-size: 1.5rem;
+    color: var(--lm-text-alt);
+    margin-top: 0.5rem;
+}
+
+.socials-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-block: 1rem;
+}
+
+.card2 {
+    display: flex;
+    margin-block: 0.5rem;
+    color: var(--lm-text);
+    overflow-wrap: break-word;
+}
+
+.card2 a {
+    color: var(--lm-text);
+    word-break: break-all;
+}
+
+.card2 img {
+    margin-right: 8px;
+    height: 1.6rem;
+}
+@media screen and (max-width:780px){
+    .wrapper{
+        height: 100%;
+        width:100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 1rem;
+    }
+    .userInfo-container{
+        max-width: 35rem;
+        padding-right: 1rem;
+        padding-top: 1rem;
+        overflow-wrap: break-word;
+    }
+    .search-container{
+        max-width: 35rem;
+    }
+    .head-container{
+    max-width: 35rem;
+}
+[data-input]{
+font-size: 0.8rem;
+}
+.btn{
+    font-size: 0.7rem;
+    display: flex;
+    justify-content: center;
+}
+   .user-container{
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    left: 85px;
+   }
+   .user-container div{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+   }
+   .user-container h1{
+    font-size: 1.2rem;
+   }
+   .user-container a{
+    font-size: 0.9rem;
+   }
+   .userInfo-container [data-userImage]{
+    height: 5rem;
+    width: 5rem;
+    position: absolute;
+    left: 5rem;
+    top: 1rem;
+   }
+   .socials-container{
+    grid-template-columns: 1fr;
+   }
+   .card p {
+    font-size: 0.8rem;
+}
+
+.card h1 {
+    font-size: 1.0rem;
+}
+
+}
+@media screen and (max-width:599px) {
+    .userInfo-container{
+        max-width: 25rem;
+        padding-right: 0;
+    }
+    .search-container{
+        max-width: 25rem;
+    }
+    .head-container{
+    max-width: 25rem;
+}
+.btn{
+    font-size: 0.3rem;
+} 
+ .userInfo-container .user-container p{
+    font-size: 0.9rem;
+   }
+    .userInfo-container [data-userImage]{
+        height: 4rem;
+        width: 4rem;
+        position: absolute;
+        left: 3rem;
+    }
+    .user-container h1{
+        font-size: 1rem;
+    }
+}
+@media screen and(max-width:408){
+    .userInfo-container{
+        max-width: 15rem;
+    }
+    .search-container{
+        max-width: 15rem;
+    }
+    .head-container{
+    max-width: 15rem;
+}
+[data-name]{
+    font-size: 0.3rem;
+}
+}
+
+

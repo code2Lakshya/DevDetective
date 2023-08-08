@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Detective</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="head-container">
+            <h1>DevDetective</h1>
+            <div class="changeColor-container">
+                <p data-color></p>
+                <img src="images/moon-icon.svg" id="moon">
+                <img src="images/sun-icon.svg" id="sun">
+            </div>
+        </div>
+        <div class="search-container">
+            <img src="images/search-icon.svg" alt="">
+            <input data-input type="text" placeholder=" Enter a GitHub username...">
+            <p data-error>no search results</p>
+            <button class="btn">Search</button>
+        </div>
+        <div class="userInfo-container">
+            <img data-userImage>
+            <div class="details-container">
+                <div class="user-container">
+                        <div>
+                            <h1 data-name></h1>
+                            <a data-userName></a>
+                        </div>
+                        <p data-joiningDate></p>
+                </div>
+                <p data-bio></p>
+                <div class="followDetails-container">
+                    <div class="card">
+                        <p>Repos</p>
+                        <h1 data-repos></h1>
+                    </div>
+                    <div class="card">
+                        <p>Followers</p>
+                        <h1 data-followers></h1>
+                    </div>
+                    <div class="card">
+                        <p>Following</p>
+                        <h1 data-following></h1>
+                    </div>
+                </div>
+                <div class="socials-container">
+                    <div class="location-card card2">
+                        <img src="images/location-icon.svg">
+                        <p data-locationLink></p>
+                    </div>
+                    <div class="blogs-card card2">
+                        <img src="images/website-icon.svg">
+                        <a data-blogslink></a>
+                    </div>
+                    <div class="twitter-card card2">
+                        <img src="images/twitter-icon.svg">
+                        <a data-twitterLink></a>
+                    </div>
+                    <div class="company-card card2">
+                        <img src="images/company-icon.svg">
+                        <p data-companyLink></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
