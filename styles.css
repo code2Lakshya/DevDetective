@@ -26,6 +26,7 @@
 .wrapper {
     width: 100vw;
     height: 100vh;
+    overflow: auto;
     background-color: var(--lm-bg);
     display: flex;
     justify-content: center;
@@ -213,8 +214,6 @@ input::placeholder{
 }
 @media screen and (max-width:780px){
     .wrapper{
-        height: 100%;
-        width:100%;
         display: flex;
         justify-content: center;
         align-items: center;
